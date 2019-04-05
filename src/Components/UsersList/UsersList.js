@@ -5,6 +5,7 @@ import TableCell from '@material-ui/core/TableCell';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit
@@ -24,10 +25,20 @@ const userList = props => (
         </Button>
       </Link>
 
-      <Button variant="contained" color="primary" className={props.button}>
+      <Button
+        onClick={() => props.openModalUpdateUser(props)}
+        variant="contained"
+        color="primary"
+        className={props.button}
+      >
         Update
       </Button>
-      <Button variant="contained" color="secondary" className={props.button}>
+      <Button
+        onClick={() => props.openModalDeleteUser(props)}
+        variant="contained"
+        color="secondary"
+        className={props.button}
+      >
         Delete
       </Button>
     </TableCell>
